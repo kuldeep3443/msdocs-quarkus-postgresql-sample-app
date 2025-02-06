@@ -1,20 +1,24 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/java-postgres
 {
-	"name": "Java & PostgreSQL",
-	"dockerComposeFile": "docker-compose.yml",
-	"service": "app",
-	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
-	"features": {
-		"ghcr.io/devcontainers-contrib/features/quarkus-sdkman:2": {
-			"version": "latest",
-			"jdkVersion": "17",
-			"jdkDistro": "ms"
-		},
-		"ghcr.io/azure/azure-dev/azd:0": {
-			"version": "stable"
-		}
-	}
+    "name": "Java & PostgreSQL",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "app",
+    "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+    "features": {
+        "ghcr.io/devcontainers-contrib/features/quarkus-sdkman:2": {
+            "version": "latest",
+            "jdkVersion": "17",
+            "jdkDistro": "ms"
+        },
+        "ghcr.io/azure/azure-dev/azd:0": {
+            "version": "stable"
+        }
+    },
+    "forwardPorts": [5432],
+    "postCreateCommand": "java -version",
+    "remoteUser": "root"
+}
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {}
